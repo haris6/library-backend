@@ -7,7 +7,7 @@ const studentController = {
             res.status(201).json(id);
         }
         catch(err){
-            console.log(err);
+            res.status(500).json(err);
         }
     },
 
@@ -17,7 +17,29 @@ const studentController = {
             res.status(200).json(data);
         }
         catch(err){
-            console.log(err)
+            res.status(500).json(err);        
+        }
+    },
+
+    getBorrowedBooks: async (req,res,next) => {
+        try{
+            const id = parseInt(req.body.id);
+            const data = await studentService.getBorrowedBooks(id);
+            res.status(200).json(data);
+        }
+        catch(err){
+            res.status(500).json(err.message);
+        }
+    },
+
+    returnBook: async (req,res,next) => {
+        try{
+            const id = parseInt(req.body.id);
+            const data = await studentService.returnBook(id);
+            res.status(200).json(data);
+        }
+        catch(err){
+            res.status(500).json(err.message);
         }
     }
 }

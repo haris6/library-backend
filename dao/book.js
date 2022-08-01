@@ -12,7 +12,7 @@ const bookDao = {
     getAllBooks: async () => {
         const data = await db('books').select();
         return data;
-    }
+    },
 }
 
 module.exports = {bookDao}

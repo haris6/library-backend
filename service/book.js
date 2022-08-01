@@ -7,7 +7,7 @@ const bookService = {
 
     getAllBooks: async() => {
         return bookDao.getAllBooks();
-    }
+    },
 }
 
 module.exports = {bookService}

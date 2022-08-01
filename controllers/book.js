@@ -7,7 +7,7 @@ const bookController = {
             res.status(201).json(id);
         }
         catch(err){
-            console.log(err);
+            res.status(500).json(err);        
         }
     },
 
@@ -17,9 +17,9 @@ const bookController = {
             res.status(200).json(data);
         }
         catch(err){
-            console.log(err)
+            res.status(500).json(err);        
         }
-    }
+    },
 }
 
 module.exports = {bookController}

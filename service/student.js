@@ -7,6 +7,14 @@ const studentService = {
 
     getAllStudents: async() => {
         return studentDao.getAllStudents();
+    },
+
+    getBorrowedBooks: async (id) =>{
+        return await studentDao.getBorrowedBooks(id);
+    },
+
+    returnBook: async (id) => {
+        return await studentDao.returnBook(id);
     }
 }
 
