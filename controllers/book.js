@@ -20,6 +20,16 @@ const bookController = {
             res.status(500).json(err);        
         }
     },
+
+    Borrow: async (req,res,next) => {
+        try{
+            const data = await bookService.Borrow(req.body.bid,req.body.sid,req.body.bdate,req.body.rdate);
+            res.status(200).json(data);
+        }
+        catch(err){
+            res.status(500).json(err);        
+        }
+    }
 }
 
 module.exports = {bookController}

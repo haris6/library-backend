@@ -8,6 +8,10 @@ const bookService = {
     getAllBooks: async() => {
         return bookDao.getAllBooks();
     },
+
+    Borrow: async(bid,sid,bdate,rdate) =>{
+        return bookDao.Borrow(bid,sid,bdate,rdate);
+    }
 }
 
 module.exports = {bookService}
